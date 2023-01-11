@@ -3,8 +3,8 @@ import './todoList.css'
 
 export const ToDoList = ({ todoList }) => {
   return (
-    <div className='content-container'>
-      <h1 className='content-header'>Your ToDo List</h1>
+    <div className='container'>
+      <h1 className='container-header'>Your ToDo List</h1>
       <div className='content-body'>      
           {todoList.length > 0 ? (
             todoList.map((todo) => (
