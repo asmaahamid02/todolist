@@ -1,0 +1,23 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ccc;
+  font-size: 1.2rem;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-image {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.todo-title {
+  flex: 1;
+}
