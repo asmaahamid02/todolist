@@ -42,8 +42,14 @@ function App() {
   }
 
   const markTaskComplete = (id) => {
-    console.log('from app' , id)
+    // console.log('from app' , id)
     let newTodoList = todoList.map((item) => (item.id === Number(id) ? {...item, complete: !item.complete} : {...item}))
+    setTodoList(newTodoList)
+  }
+
+  const deleteTask = (id) => {
+    console.log('from app', id)
+    let newTodoList = todoList.filter((item) => item.id !== Number(id))
     setTodoList(newTodoList)
   }
 
@@ -51,7 +57,7 @@ function App() {
     <div className='app'>
       <Header />
       <ToDoForm addNewItem={addNewItem} />
-      <ToDoList todoList={todoList} markTaskComplete={markTaskComplete}/>
+      <ToDoList todoList={todoList} markTaskComplete={markTaskComplete} deleteTask={deleteTask}/>
     </div>
   )
 }
