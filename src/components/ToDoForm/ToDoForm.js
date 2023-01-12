@@ -45,8 +45,7 @@ export const ToDoForm = ({addNewItem}) => {
           <input
             type='text'
             id='title'
-            placeholder='Title'
-            accept='image/*'
+            placeholder='Title'           
             {...formik.getFieldProps('title')}
           />
           {formik.errors.title && formik.touched.title && (
@@ -64,6 +63,7 @@ export const ToDoForm = ({addNewItem}) => {
           <input
             type='file'           
             id='image'
+            accept='image/*'
             name={formik.getFieldProps('image').name}            
             onChange={(e) => {
               // console.log(e.target.files[0])
