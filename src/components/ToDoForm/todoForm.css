@@ -29,3 +29,12 @@ color:#fff;
 width: 100%;
 }
 
+.invalid > input{
+    border:1px solid red;    
+}
+
+.error{
+    color:red;
+    font-size:12px;
+}
+
