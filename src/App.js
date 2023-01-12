@@ -40,11 +40,18 @@ function App() {
     newTodoList = [...newTodoList, {id: todoList.length + 1, ...item}]
     setTodoList(newTodoList)
   }
+
+  const markTaskComplete = (id) => {
+    console.log('from app' , id)
+    let newTodoList = todoList.map((item) => (item.id === Number(id) ? {...item, complete: !item.complete} : {...item}))
+    setTodoList(newTodoList)
+  }
+
   return (
     <div className='app'>
       <Header />
-      <ToDoForm addNewItem={addNewItem}/>
-      <ToDoList todoList={todoList} />
+      <ToDoForm addNewItem={addNewItem} />
+      <ToDoList todoList={todoList} markTaskComplete={markTaskComplete}/>
     </div>
   )
 }
