@@ -41,10 +41,6 @@
     font-size: 1rem;
 }
 
-.invalid > input{
-    border:1px solid red;    
-}
-
 .error{
     color:red;
     font-size:12px;
@@ -53,3 +49,38 @@
 .center{
     text-align: center;
 }
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:10px;
+    }
+    
+    .form-group label{
+    margin-bottom:5px;
+    }
+    
+    .form-group input{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    }
+    
+    .form-group input:focus{
+    outline:none;
+    border:2px solid #a75697;
+    }
+    
+    .submit-button{
+    
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    background-color:#a75697;
+    color:#fff;
+    width: 100%;
+    }
+    
+    .invalid > input{
+        border:1px solid red;    
+    }
