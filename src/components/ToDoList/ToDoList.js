@@ -1,9 +1,9 @@
 import { TodoItem } from '../ToDoItem/ToDoItem'
 import './todoList.css'
 
-export const ToDoList = ({ todoList, markTaskComplete }) => {
+export const ToDoList = ({ todoList, markTaskComplete, deleteTask }) => {
     const incompleteTasks  = todoList.filter((item) => !item.complete).length 
-    const text = incompleteTasks > 0 ? `${incompleteTasks} incomplete tasks` : 'All tasks completed'
+    const text = incompleteTasks > 0 ? `${incompleteTasks}/${todoList.length} incomplete tasks` : todoList.length > 0 && 'All tasks completed'
   return (
     <div className='container'>
       <div className='container-header'>
@@ -17,6 +17,7 @@ export const ToDoList = ({ todoList, markTaskComplete }) => {
               todo={todo}
               key={todo.id}
               markTaskComplete={markTaskComplete}
+              deleteTask={deleteTask}
             />
           ))
         ) : (
