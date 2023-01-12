@@ -14,9 +14,24 @@
  }
 
  .container-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #eee;
+}
+
+ .container-header_title{
     font-size: 2em;
     font-weight: bold;
     text-align: center;
+}
+
+.container-header_subtitle{
+    font-size: 1em;
+    text-align: center;
+    color: #a75697;
+    margin: 10px 0;
 }
 
 .btn{

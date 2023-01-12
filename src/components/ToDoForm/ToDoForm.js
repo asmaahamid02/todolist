@@ -1,5 +1,4 @@
 import './todoForm.css'
-import { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
@@ -28,7 +27,7 @@ export const ToDoForm = ({addNewItem}) => {
 
   return (
     <div className='container'>
-      <h1 className='container-header'>Add New Task</h1>
+      <h1 className='container-header_title'>Add New Task</h1>
       <form
         className='form-body'
         onSubmit={(e) => {
