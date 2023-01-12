@@ -4,6 +4,8 @@
 >Design
   - Simple design using pure css
   - Designed to fit mobile users
+  - Common styles are defined in the App.css file
+  - Component's style is defined in a separate css file
 
 >Steps
   1. Designed the page (list and form) in terms of jsx components and css styling
@@ -23,6 +25,27 @@
 - axios (for HTTP requests)
 
 ## implementation
+
+| Login | Home |  
+| ----------------------------------------- | ----------------------------------------- |
+|<img src='./ReadmeAssets/images/login.PNG' />|<img src='./ReadmeAssets/images/home.PNG' />|
+
+### Add Task
+<img src='./ReadmeAssets/gifs/add.gif' />
+
+### Mark Task as Completed
+<img src='./ReadmeAssets/gifs/mark.gif' />
+
+### Delete Task
+<img src='./ReadmeAssets/gifs/delete.gif' />
+
+### Load More/Less
+<img src='./ReadmeAssets/gifs/load.gif' />
+
+### Form Validation
+<img src='./ReadmeAssets/gifs/form-validation.gif' />
+
+<br />
 
 ## How To run
 > ### Prerequisites
