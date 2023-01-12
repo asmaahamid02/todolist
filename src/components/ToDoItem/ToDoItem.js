@@ -2,9 +2,14 @@ import { faCheck, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './todoItem.css'
 
-export const TodoItem = ({ todo }) => {
-    return (
-        <div className='todo-item'>
+export const TodoItem = ({ todo, markTaskComplete }) => {
+    const handleClick = (e) => {
+        e.preventDefault()
+        console.log(e.currentTarget.id)
+        markTaskComplete(e.currentTarget.id)
+    }
+    return (        
+        <div className='todo-item' onClick={handleClick} id={todo.id}>
             <img className='todo-image' src={todo.image} alt={todo.title} />
             <div className='todo-info'>
 
