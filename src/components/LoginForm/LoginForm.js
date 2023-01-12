@@ -3,12 +3,14 @@ import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { Layout } from '../Layout'
 import { login } from '../../services/AuthService'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuthContext } from '../../context/AuthContext'
 
 export const LoginForm = () => {
   const [error, setError] = useState('')
   const navigate = useNavigate()
+  const [authUser, setAuthUser] = useAuthContext()
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -17,10 +19,9 @@ export const LoginForm = () => {
     onSubmit: async (values) => {
       try {
         setError('')
-        await login(values.email, values.password)
-        //redirect to home route
-        navigate('/home')
-
+        await login(values.email, values.password)  
+        navigate('/')
+        setAuthUser(true)      
       } catch (error) {
         setError(error)
       }
@@ -34,6 +35,12 @@ export const LoginForm = () => {
         .min(6, 'Password must be at least 6 characters'),
     }),
   })
+
+  useEffect(() => {
+    if(authUser) {
+        navigate('/')
+    }
+}, [authUser, navigate])
 
   return (
     <Layout>
