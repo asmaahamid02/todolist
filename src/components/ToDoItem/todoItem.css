@@ -8,6 +8,13 @@
   cursor: pointer;
 }
 
+.todo-item_details{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;    
+}
+
 .todo-item:last-child {
   border-bottom: none;
 }
