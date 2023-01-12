@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
-export const ToDoForm = () => {
+export const ToDoForm = ({addNewItem}) => {
   const formik = useFormik({
     initialValues: {
       title: '',
@@ -11,6 +11,14 @@ export const ToDoForm = () => {
     },
     onSubmit: (values) => {
       console.log(values)
+      addNewItem({
+        title: values.title,
+        image: values.image,
+        complete: false,
+      })
+        formik.resetForm()
+        //reset image input
+        document.getElementById('image').value = ''
     },
     validationSchema: Yup.object({
       title: Yup.string().required('Title is required'),
@@ -39,6 +47,7 @@ export const ToDoForm = () => {
             type='text'
             id='title'
             placeholder='Title'
+            accept='image/*'
             {...formik.getFieldProps('title')}
           />
           {formik.errors.title && formik.touched.title && (
@@ -54,9 +63,9 @@ export const ToDoForm = () => {
         >
           <label htmlFor='image'>Image</label>
           <input
-            type='file'
-            name='image'
+            type='file'           
             id='image'
+            name={formik.getFieldProps('image').name}            
             onChange={(e) => {
               // console.log(e.target.files[0])
               // setImageInput(URL.createObjectURL(e.target.files[0]))
